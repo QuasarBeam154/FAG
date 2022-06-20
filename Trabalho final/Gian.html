@@ -9,28 +9,28 @@
 <body>
     <script>
         function save(data1, data2) {
-    alert(`para você saber, salvamos seus dados e você pode usar eles denovo, ${data1}, ${data2}`)
-    let data3 = prompt("você quer usa-los? s para sim qualquer outro para não, sair para sair")
+    alert(`Salvamos seus dados, você pode usar eles denovo: ${data1}, ${data2}`)
+    let data3 = prompt("Você quer usá-los? s para sim qualquer outro para não, sair para sair")
     if (data3 == "sair") {
-        alert("ta")
+        alert("Fim")
     } else
     if (data3 == "s") {
-        let choice = prompt("qual operação você quer fazer?, s de soma, d de divisão, ss de subtração, m de multiplicação")
+        let choice = prompt("Qual operação você quer fazer?, s para soma, d para divisão, ss para subtração e m para multiplicação")
         switch (choice) {
             case 'm':
-                alert("você escolheu multiplicação")
+                alert("Você escolheu multiplicação")
                 multi(data1, data2)
                 break
             case 's':
-                alert("você escolheu soma")
+                alert("Você escolheu soma")
                 soma(data1, data2)
                 break
             case 'ss':
-                alert("você escolheu subtração")
+                alert("Você escolheu subtração")
                 sub(data1, data2)
                 break
             case 'd':
-                alert("você escolheu divisão")
+                alert("Você escolheu divisão")
                 divi(data1, data2)
                 break
         }
@@ -41,16 +41,16 @@
 
 function multi(first, second) {
     if (first == "x" || second == "y") {
-        let num1 = Number(prompt("diga o primeiro numero"))
-        let num2 = Number(prompt("diga o segundo numero"))
+        let num1 = Number(prompt("Digite o primeiro número: "))
+        let num2 = Number(prompt("Digite o segundo número:"))
         alert(num1 * num2);
-        let choice = prompt("algo mais? s para sim")
+        let choice = prompt("Algo mais? s para sim.")
         if (choice == "s") {
             save(num1, num2)
-        } else{alert("tchau")}
+        } else{alert("Fim")}
     } else {
         alert(first * second);
-        let choice = prompt("algo mais? s para sim")
+        let choice = prompt("Algo mais? s para sim.")
         if (choice == "s") {
             save(first, second)
         }
@@ -58,19 +58,19 @@ function multi(first, second) {
 }
 function divi(first, second) {
     if (first == "x" || second == "y") {
-        let num1 = Number(prompt("diga o primeiro numero"))
-        let num2 = Number(prompt("diga o segundo numero"))
+        let num1 = Number(prompt("Digite o primeiro número:"))
+        let num2 = Number(prompt("Digite o segundo número:"))
         if(num1 == 0 || num2 == 0){
-            alert("nao escolhe zero idiota, da f5 ai bundao")
+            alert("Impossível dividir por 0.")
         }
         alert(num1 / num2);
-        let choice = prompt("algo mais? s para sim")
+        let choice = prompt("Algo mais? s para sim.")
         if (choice == "s") {
             save(num1, num2)
         }
     } else {
         alert(first / second);
-        let choice = prompt("algo mais? s para sim")
+        let choice = prompt("Algo mais? s para sim.")
         if (choice == "s") {
             save(first, second)
         }
@@ -78,16 +78,16 @@ function divi(first, second) {
 }
 function soma(first, second) {
     if (first == "x" || second == "y") {
-        let num1 = Number(prompt("diga o primeiro numero"))
-        let num2 = Number(prompt("diga o segundo numero"))
+        let num1 = Number(prompt("Digite o primeiro número:"))
+        let num2 = Number(prompt("Digite o segundo número:"))
         alert(num1 + num2);
-        let choice = prompt("algo mais? s para sim")
+        let choice = prompt("Algo mais? s para sim.")
         if (choice == "s") {
             save(num1, num2)
         }
     } else {
         alert(first + second);
-        let choice = prompt("algo mais? s para sim")
+        let choice = prompt("Algo mais? s para sim.")
         if (choice == "s") {
             save(first, second)
         }
@@ -95,39 +95,39 @@ function soma(first, second) {
 }
 function sub(first, second) {
     if (first == "x" || second == "y") {
-        let num1 = Number(prompt("diga o primeiro numero"))
-        let num2 = Number(prompt("diga o segundo numero"))
+        let num1 = Number(prompt("Digite o primeiro número:"))
+        let num2 = Number(prompt("Digite o segundo número:"))
         alert(num1 - num2);
-        let choice = prompt("algo mais? s para sim")
+        let choice = prompt("Algo mais? s para sim.")
         if (choice == "s") {
             save(num1, num2)
         }
     } else {
         alert(first - second);
-        let choice = prompt("algo mais? s para sim")
+        let choice = prompt("Algo mais? s para sim.")
         if (choice == "s") {
             save(first, second)
         }
     }
 }
 function main() {
-    alert("calculadora")
-    var data = prompt("qual função você quer, m multiplicação, s soma, ss subtração, d divisão")
+    alert("Calculadora")
+    var data = prompt("Qual operação você quer fazer? m para multiplicação, s para soma, ss para subtração e d para divisão.")
     switch (data) {
         case 'm':
-            alert("você escolheu multiplicação")
+            alert("Você escolheu multiplicação")
             multi("x", "y");
             break;
         case 's':
-            alert("você escolheu soma")
+            alert("Você escolheu soma")
             soma("x", "y");
             break;
         case 'd':
-            alert("você escolheu divisão")
+            alert("Você escolheu divisão")
             divi("x", "y");
             break;
         case 'ss':
-            alert("você escolheu subtração")
+            alert("Você escolheu subtração")
             sub("x", "y");
             break
         default:

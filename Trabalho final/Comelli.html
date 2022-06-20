@@ -8,29 +8,69 @@
 </head>
 <body>
     <script>
-        alert("Calculadora Online")
-        /*FirstValue = Number(prompt("Informe o primeiro valor"))*/
+        alert("Calculadora Online");
         
         function adicao() {
-            alert("Executando")
-            result = values[0] + values [1]
-            alert(result);
+            let result = values[0] + values [1];
+            alert(`${values[0]} + ${values[1]} = ${result}`);
+            
+            let option = prompt("Deseja fazer outra operação? S ou N.").toUpperCase();
+            if (option == "S") {
+                main();
+            } else {
+                alert("Programa finalizado!");
+            }
         }
+        
         function subtracao() {
+            let result = values[0] - values[1];
+            alert(`${values[0]} - ${values[1]} = ${result}`);
             
+            let option = prompt("Deseja fazer outra operação? S ou N.").toUpperCase();
+            if (option == "S") {
+                main();
+            } else {
+                alert("Programa finalizado!");
+            }
         }
-        function multiplacao() {
+        
+        function multiplicacao() {
+            let result = values[0] * values[1];
+            alert(`${values[0]} * ${values[1]} = ${result}`);
             
+            let option = prompt("Deseja fazer outra operação? S ou N.").toUpperCase();
+            if (option == "S") {
+                main();
+            } else {
+                alert("Programa finalizado!");
+            }
         }
+        
         function divisao() {
+            if ((values[0] == 0) || (values[1] == 0)) {
+                alert("Dividendo/divisor inválido, não é possível dividir por 0.\nRetornando para o input.");
+                main();
+            }
+            
+            let result = values[0] / values[1];
+            alert(`${values[0]} / ${values[1]} = ${result}`);
+            
+            
+            let option = prompt("Deseja fazer outra operação? S ou N.").toUpperCase();
+            if (option == "S") {
+                main();
+            } else {
+                alert("Programa finalizado!");
+            }
             
         }
-        function question() {
+        
+        function main() {
             values = [
                 Number(prompt("Informe o primeiro valor:")),
                 Number(prompt("Informe o segundo valor:")),
             ]
-            option = prompt("Qual operação deseja realizar?\nA - Adição\nS - Subtração\nM - Multiplicação\nD - Divisão").toUpperCase;
+            option = prompt("Qual operação deseja realizar?\nA - Adição\nS - Subtração\nM - Multiplicação\nD - Divisão").toUpperCase();
         
             switch (option) {
                 case 'A':
@@ -42,9 +82,19 @@
                     alert(`Você optou pela subtração dos valores ${values[0]} e ${values[1]}.`);
                     subtracao();
                     break;
+                
+                case 'M':
+                    alert(`Você optou pela multiplicação dos valores ${values[0]} e ${values[1]}.`);
+                    multiplicacao();
+                    break;
+                
+                case 'D':
+                    alert(`Você optou pela divisão dos valores ${values[0]} e ${values[1]}.`);
+                    divisao();
+                    break;
             }
         }
-        question();
+        main();
         </script>
 </body>
 </html>
