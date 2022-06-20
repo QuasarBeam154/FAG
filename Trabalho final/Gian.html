@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Trabalho final - Gian</title>
+</head>
+<body>
+    <script>
+        function save(data1, data2) {
+    alert(`para você saber, salvamos seus dados e você pode usar eles denovo, ${data1}, ${data2}`)
+    let data3 = prompt("você quer usa-los? s para sim qualquer outro para não, sair para sair")
+    if (data3 == "sair") {
+        alert("ta")
+    } else
+    if (data3 == "s") {
+        let choice = prompt("qual operação você quer fazer?, s de soma, d de divisão, ss de subtração, m de multiplicação")
+        switch (choice) {
+            case 'm':
+                alert("você escolheu multiplicação")
+                multi(data1, data2)
+                break
+            case 's':
+                alert("você escolheu soma")
+                soma(data1, data2)
+                break
+            case 'ss':
+                alert("você escolheu subtração")
+                sub(data1, data2)
+                break
+            case 'd':
+                alert("você escolheu divisão")
+                divi(data1, data2)
+                break
+        }
+    } else {
+        main()
+    }
+}
+
+function multi(first, second) {
+    if (first == "x" || second == "y") {
+        let num1 = Number(prompt("diga o primeiro numero"))
+        let num2 = Number(prompt("diga o segundo numero"))
+        alert(num1 * num2);
+        let choice = prompt("algo mais? s para sim")
+        if (choice == "s") {
+            save(num1, num2)
+        } else{alert("tchau")}
+    } else {
+        alert(first * second);
+        let choice = prompt("algo mais? s para sim")
+        if (choice == "s") {
+            save(first, second)
+        }
+    }
+}
+function divi(first, second) {
+    if (first == "x" || second == "y") {
+        let num1 = Number(prompt("diga o primeiro numero"))
+        let num2 = Number(prompt("diga o segundo numero"))
+        if(num1 == 0 || num2 == 0){
+            alert("nao escolhe zero idiota, da f5 ai bundao")
+        }
+        alert(num1 / num2);
+        let choice = prompt("algo mais? s para sim")
+        if (choice == "s") {
+            save(num1, num2)
+        }
+    } else {
+        alert(first / second);
+        let choice = prompt("algo mais? s para sim")
+        if (choice == "s") {
+            save(first, second)
+        }
+    }
+}
+function soma(first, second) {
+    if (first == "x" || second == "y") {
+        let num1 = Number(prompt("diga o primeiro numero"))
+        let num2 = Number(prompt("diga o segundo numero"))
+        alert(num1 + num2);
+        let choice = prompt("algo mais? s para sim")
+        if (choice == "s") {
+            save(num1, num2)
+        }
+    } else {
+        alert(first + second);
+        let choice = prompt("algo mais? s para sim")
+        if (choice == "s") {
+            save(first, second)
+        }
+    }
+}
+function sub(first, second) {
+    if (first == "x" || second == "y") {
+        let num1 = Number(prompt("diga o primeiro numero"))
+        let num2 = Number(prompt("diga o segundo numero"))
+        alert(num1 - num2);
+        let choice = prompt("algo mais? s para sim")
+        if (choice == "s") {
+            save(num1, num2)
+        }
+    } else {
+        alert(first - second);
+        let choice = prompt("algo mais? s para sim")
+        if (choice == "s") {
+            save(first, second)
+        }
+    }
+}
+function main() {
+    alert("calculadora")
+    var data = prompt("qual função você quer, m multiplicação, s soma, ss subtração, d divisão")
+    switch (data) {
+        case 'm':
+            alert("você escolheu multiplicação")
+            multi("x", "y");
+            break;
+        case 's':
+            alert("você escolheu soma")
+            soma("x", "y");
+            break;
+        case 'd':
+            alert("você escolheu divisão")
+            divi("x", "y");
+            break;
+        case 'ss':
+            alert("você escolheu subtração")
+            sub("x", "y");
+            break
+        default:
+            break;
+    }
+}
+main()
+    </script>
+</body>
+</html>

@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Questão 2 - Comelli</title>
+</head>
+<body>
+    <script>
+        function volLata() {
+            r = Number(prompt("Qual o raio da lata de óleo? (em cm)"));
+            h = Number(prompt("Qual a altura da lata de óleo? (em cm)"));
+            res = Math.PI * r**2 * h;
+
+            alert(`O volume da lata de óleo é ${res.toFixed(2)} cm³`);
+            option = prompt("Quer calcular o volume de outra lata? S ou N");
+            if (option == "S"){
+                volLata();
+            } else {
+                alert("Programa finalizado!")
+            }
+        }
+        volLata();
+    </script>
+</body>
+</html>

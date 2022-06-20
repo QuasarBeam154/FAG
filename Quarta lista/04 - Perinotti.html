@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Questão 4 - Perinotti</title>
+</head>
+<body>
+    <script>
+        const notas = [100, 50, 20, 10, 5, 2, 1]
+        let valor = parseFloat(prompt("Informe o valor monetário"));
+
+        //contador que vai percorrer o array das notas fazendo a divisão dos valores
+        for(i = 0; i <= 5; i++){
+            qntd = parseInt(valor/notas[i]); //retorna a quantidade de notas necessarias
+            valor = valor%notas[i]; //retorna o resto da divisao do preço
+            if(qntd >= 1){
+                document.write(`Quantidade: ${qntd} || Nota: ${notas[i]} <br>`)
+            }  
+        }
+    </script>
+    
+</body>
+</html>

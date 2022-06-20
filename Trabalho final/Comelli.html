@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Trabalho final - Comelli</title>
+</head>
+<body>
+    <script>
+        alert("Calculadora Online")
+        /*FirstValue = Number(prompt("Informe o primeiro valor"))*/
+        
+        function adicao() {
+            alert("Executando")
+            result = values[0] + values [1]
+            alert(result);
+        }
+        function subtracao() {
+            
+        }
+        function multiplacao() {
+            
+        }
+        function divisao() {
+            
+        }
+        function question() {
+            values = [
+                Number(prompt("Informe o primeiro valor:")),
+                Number(prompt("Informe o segundo valor:")),
+            ]
+            option = prompt("Qual operação deseja realizar?\nA - Adição\nS - Subtração\nM - Multiplicação\nD - Divisão").toUpperCase;
+        
+            switch (option) {
+                case 'A':
+                    alert(`Você optou pela adição dos valores ${values[0]} e ${values[1]}.`);
+                    adicao();
+                    break;
+               
+                case 'S':
+                    alert(`Você optou pela subtração dos valores ${values[0]} e ${values[1]}.`);
+                    subtracao();
+                    break;
+            }
+        }
+        question();
+        </script>
+</body>
+</html>

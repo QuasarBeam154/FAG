@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Questão 5 - Comelli</title>
+</head>
+<body>
+    <script>
+        function question() {
+            passagem = Number(prompt("Qual o número de passagens que deseja comprar?"));
+            companhia = prompt("Agora me diga de qual companhia você deseja comprar as passagens:\nA - Companhia A\nB - Companhia B\nC - Companhia C");
+            if (companhia == "A") {
+                compA();    
+            } else if (companhia == "B") {
+                compB();
+            } else if (companhia == "C") {
+                compC();
+            } else {
+                alert("Companhia inválida!");
+                question();
+            }
+        }
+        
+        function compA() {
+            let totalValue = passagem*180;
+            let discount = totalValue - (totalValue * 10/100);
+            
+            alert(`Você decidiu comprar ${passagem} passagem(s) da companhia A, no valor de R$ 180,00 cada!`);
+
+            alert(`O valor total das passagens sem desconto é de R$ ${totalValue}\nCom desconto que ganhou de 10% o valor desce para R$ ${discount}.`);
+            option = prompt("Deseja comprar mais passagens? S ou N.");
+            
+            if (option == "S") {
+                question();
+            } else {
+                alert("Programa finalizado!");
+            }
+        }
+        
+        function compB() {
+            let totalValue = passagem*195;
+            let discount = totalValue - (totalValue * 10/100);
+            
+            alert(`Você decidiu comprar ${passagem} passagem(s) da companhia B, no valor de R$ 195,00 cada!`);
+
+            alert(`O valor total das passagens sem desconto é de R$ ${totalValue}\nCom desconto que ganhou de 10% o valor desce para R$ ${discount}.`);
+            option = prompt("Deseja comprar mais passagens? S ou N.");
+            
+            if (option == "S") {
+                question();
+            } else {
+                alert("Programa finalizado!");
+            }
+
+        }
+        
+        function compC() {
+            let totalValue = passagem*200;
+            let discount = totalValue - (totalValue * 10/100);
+            
+            alert(`Você decidiu comprar ${passagem} passagem(s) da companhia C, no valor de R$ 200,00 cada!`);
+
+            alert(`O valor total das passagens sem desconto é de R$ ${totalValue}\nCom desconto que ganhou de 10% o valor desce para R$ ${discount}.`);
+            option = prompt("Deseja comprar mais passagens? S ou N.");
+            
+            if (option == "S") {
+                question();
+            } else {
+                alert("Programa finalizado!");
+            }
+
+        }
+        question();
+    </script>
+</body>
+</html>
