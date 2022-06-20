@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      const qtdpessoas = prompt("Quantas pessoas vão na festa?");
+      const valorsalgado = prompt("Quanto custa a centena do salgado?");
+      const valordoce = prompt("Quanto custa a centena do doce°");
+      const litrao = prompt("Quanto custa 2 litros de refri?");
+
+      function howmuch() {
+        const mediasalgado = 15;
+        const mediadoce = 10;
+        const medialitro = 0.5;
+        const salgadototal = qtdpessoas * mediasalgado;
+        const docetotal = qtdpessoas * mediadoce;
+        const litrototal = qtdpessoas * medialitro;
+        var calculosal = (salgadototal / 100) * valorsalgado;
+        var calculodoce = (docetotal / 100) * valordoce;
+        var calculolitrao = (litrototal / 2) * litrao;
+        var calculofinal = calculosal + calculodoce + calculolitrao;
+        alert(
+          `Você vai precisar de ${salgadototal} salgadinhos, que vai custar ${calculosal}, ${litrototal} litros de refri vai custar ${calculolitrao}, e ${docetotal} docinhos vai custar ${calculodoce}. A festa no total vai custar ${calculofinal}`
+        );
+      }
+    </script>
+  </body>
+</html>
