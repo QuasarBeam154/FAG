@@ -8,28 +8,33 @@
 </head>
 <body>
     <script>
-        function fOperacaoSoma() {
+        function fOperacaoSoma(flPrimNum, flSegNum) {
     let flResultado = flPrimNum + flSegNum;
     window.alert(`A soma de ${flPrimNum} + ${flSegNum} é ${flResultado}!`);
+    entrada();
 }
 
-function fOperacaoSubtracao() {
+function fOperacaoSubtracao(flPrimNum, flSegNum) {
     let flResultado = flPrimNum - flSegNum;
     window.alert(`A subtração ${flPrimNum} - ${flSegNum} é ${flResultado}!`);
+    entrada();
 }
 
-function fOperacaoDivisao() {
+function fOperacaoDivisao(flPrimNum, flSegNum) {
     if (flSegNum == 0) {
         window.alert(`Erro! Impossível dividir por zero!`);
+        entrada();
     } else {
         let flResultado = flPrimNum / flSegNum;
         window.alert(`A divisão ${flPrimNum} / ${flSegNum} é ${flResultado}!`);
+        entrada();
     }
 }
 
-function fOperacaoMultiplicacao() {
+function fOperacaoMultiplicacao(flPrimNum, flSegNum) {
     let flResultado = flPrimNum * flSegNum;
     window.alert(`A multiplicação ${flPrimNum} * ${flSegNum} é ${flResultado}!`);
+    entrada();
 }
 function fEscolha(){
     do{
@@ -41,32 +46,38 @@ let flPrimNum = "";
 let flSegNum = "";
 let iEscolha = "";
 
-do{
-    fPrimNum = parseFloat(window.prompt("Digite o primeiro número."))
-}while (isNaN(flPrimNum)) // Como eu defini as duas variáveis como strings, vai repetir eternamente.
 
-do{
-    fSegNum = parseFloat(window.prompt("Agora digite o segundo número."))
-}while (isNaN(flSegNum)) // Idem.
-
-fEscolha()
-switch (iEscolha){
-    case (iEscolha == 1):
-        fOperacaoSoma();
-        break;
-    case (iEscolha == 2):
-        fOperacaoSubtracao();
-        break;
-    case (iEscolha == 3):
-        fOperacaoDivisao();
-        break;
-    case (iEscolha == 4):
-        fOperacaoMultiplicacao();
-        break;
-    default:
-        window.alert('Algo deu errado! Retornando ao menu de escolha.');
-        fEscolha()
+function entrada() {
+    do{
+        fPrimNum = parseFloat(window.prompt("Digite o primeiro número."))
+    }while (isNaN(flPrimNum)) // Como eu defini as duas variáveis como strings, vai repetir eternamente.
+    
+    do{
+        fSegNum = parseFloat(window.prompt("Agora digite o segundo número."))
+    }while (isNaN(flSegNum)) // Idem.
+    
+    fEscolha()
+    switch (iEscolha){
+        case 1:
+            fOperacaoSoma(fPrimNum, fSegNum);
+            break;
+        case 2:
+            fOperacaoSubtracao(fPrimNum, fSegNum);
+            break;
+        case 3:
+            fOperacaoDivisao(fPrimNum, fSegNum);
+            break;
+        case 4:
+            fOperacaoMultiplicacao(fPrimNum, fSegNum);
+            break;
+        default:
+            window.alert('Algo deu errado! Retornando ao menu de escolha.');
+            fEscolha()
+    }
 }
+
+
+entrada();
     </script>
 </body>
 </html>

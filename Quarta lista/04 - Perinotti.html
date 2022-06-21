@@ -12,7 +12,7 @@
         let valor = parseFloat(prompt("Informe o valor monetário"));
 
         //contador que vai percorrer o array das notas fazendo a divisão dos valores
-        for(i = 0; i <= 5; i++){
+        for(i = 0; i <= notas.length; i++){
             qntd = parseInt(valor/notas[i]); //retorna a quantidade de notas necessarias
             valor = valor%notas[i]; //retorna o resto da divisao do preço
             if(qntd >= 1){
