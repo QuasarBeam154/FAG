@@ -8,20 +8,15 @@
   </head>
   <body>
     <script>
-      var numero = 6;
-
-      function fatorialDowhile() {
-        let arr = [];
-        let contador = 1;
-        let resultado = 1;
-        do {
-          resultado *= contador;
-          contador++;
-          arr.push(resultado);
-        } while (contador <= numero);
-        console.log(numero + "! = " + resultado);
+      function fatorial(num) {
+        if (num < 2) {
+          return num;
+        } else {
+          return num * fatorial(num - 1);
+        }
       }
-      fatorialDowhile();
+
+      console.log(fatorial(6));
     </script>
   </body>
 </html>

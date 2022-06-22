@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Trabalho final - Mioto</title>
+  </head>
+  <body>
+    <script>
+      function fOperacaoSoma(flPrimNum, flSegNum) {
+        let flResultado = flPrimNum + flSegNum;
+        window.alert(`A soma de ${flPrimNum} + ${flSegNum} é ${flResultado}!`);
+        entrada();
+      }
+
+      function fOperacaoSubtracao(flPrimNum, flSegNum) {
+        let flResultado = flPrimNum - flSegNum;
+        window.alert(
+          `A subtração ${flPrimNum} - ${flSegNum} é ${flResultado}!`
+        );
+        entrada();
+      }
+
+      function fOperacaoDivisao(flPrimNum, flSegNum) {
+        if (flSegNum == 0) {
+          window.alert(`Erro! Impossível dividir por zero!`);
+          entrada();
+        } else {
+          let flResultado = flPrimNum / flSegNum;
+          window.alert(
+            `A divisão ${flPrimNum} / ${flSegNum} é ${flResultado}!`
+          );
+          entrada();
+        }
+      }
+
+      function fOperacaoMultiplicacao(flPrimNum, flSegNum) {
+        let flResultado = flPrimNum * flSegNum;
+        window.alert(
+          `A multiplicação ${flPrimNum} * ${flSegNum} é ${flResultado}!`
+        );
+        entrada();
+      }
+      function fEscolha() {
+        do {
+          iEscolha = parseInt(
+            window.prompt(
+              "Digite o número da operação que você gostaria de fazer.\n1) Soma\n2) Subtração\n3) Divisão\n4) Multiplicação"
+            )
+          );
+        } while (isNaN(iEscolha));
+      }
+
+      let flPrimNum = "";
+      let flSegNum = "";
+      let iEscolha = "";
+
+      function entrada() {
+        do {
+          fPrimNum = parseFloat(window.prompt("Digite o primeiro número."));
+        } while (isNaN(flPrimNum)); // Como eu defini as duas variáveis como strings, vai repetir eternamente.
+
+        do {
+          fSegNum = parseFloat(window.prompt("Agora digite o segundo número."));
+        } while (isNaN(flSegNum)); // Idem.
+
+        fEscolha();
+        switch (iEscolha) {
+          case 1:
+            fOperacaoSoma(fPrimNum, fSegNum);
+            break;
+          case 2:
+            fOperacaoSubtracao(fPrimNum, fSegNum);
+            break;
+          case 3:
+            fOperacaoDivisao(fPrimNum, fSegNum);
+            break;
+          case 4:
+            fOperacaoMultiplicacao(fPrimNum, fSegNum);
+            break;
+          default:
+            window.alert("Algo deu errado! Retornando ao menu de escolha.");
+            fEscolha();
+        }
+      }
+
+      entrada();
+    </script>
+  </body>
+</html>
