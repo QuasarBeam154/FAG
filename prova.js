@@ -23,27 +23,40 @@
  * g = 4,20% de perca
  */
 
-function letraA() {
+const P = 3972; // metros
+const M = 7920; // metros
+const G = 9986; // metros
+const percaP = 3.3;
+const percaM = 4.25;
+const percaG = 42000; // centímetros 
 
-}
+function letraA() {
+  let percaPorcentoG = (percaG / G).toFixed(3); // = 4,2%
+  let result = (qtdCasaco * G) * (-percaPorcentoG); 
+  alert(`${percaPorcentoG} + ${result}`);
+};
+
 function letraB() {}
 function letraC() {}
 function letraD() {}
 function main() {
   qtdCasaco = parseInt(prompt("Informe a quantidade de casacos:"));
   funcOption = prompt("Qual alternativa deseja calcular?")[0].toUpperCase();
-    if (funcOption == "A") {
-        alert("Você escolheu A");
-        letraA();
-    } else if (funcOption == "B") {
-        alert("Você escolheu B");
-        letraB();
-    } else if (funcOption == "C") {
-        alert("Você escolheu C");
-        letraC();
-    } else if (funcOption == "D") {
-        alert("Você escolheu D");
-        letraD();
-    } else {alert("Opção inválida!"); main();}
+  if (funcOption == "A") {
+    alert("Você escolheu A");
+    letraA();
+  } else if (funcOption == "B") {
+    alert("Você escolheu B");
+    letraB();
+  } else if (funcOption == "C") {
+    alert("Você escolheu C");
+    letraC();
+  } else if (funcOption == "D") {
+    alert("Você escolheu D");
+    letraD();
+  } else {
+    alert("Opção inválida!");
+    main();
+  }
 }
 main();
