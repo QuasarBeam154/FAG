@@ -31,12 +31,17 @@ const percaM = 4.25;
 const percaG = 42000; // centímetros 
 
 function letraA() {
-  let percaPorcentoG = (percaG / G).toFixed(3); // = 4,2%
-  let result = (qtdCasaco * G) * (-percaPorcentoG); 
-  alert(`${percaPorcentoG} + ${result}`);
+  let percaPorcentoG = (percaG / G).toFixed(2); // = 4,2%
+  A = qtdCasaco * G
+  B = A * (percaPorcentoG/100) // resultado esperado com 1 casaco = 420 metros
+  alert(B);
+  let result = A - B
+  alert(`Com uma perca de aproximadamente ${percaPorcentoG}%, você precisará de ${result} metros de fio.`);
 };
 
-function letraB() {}
+function letraB() {
+  
+}
 function letraC() {}
 function letraD() {}
 function main() {
