@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Segunda Chamada - Alternativa 2</title>
+</head>
+<body>
+    <script>
+        function LetraA() {
+            alert(`Raíz cúbica de X*Y*Z (${x*y*z})`);
+            calc = x * y * z 
+            res = Math.cbrt(calc);
+            alert(res);
+        }
+
+        function LetraB() {
+            if ((x <= 2) && (y <= 3) && (z <= 1)) {
+                alert(`Média ponderada dos valores informados:`);
+                media = ((x+2) * (y+3) * (z+1))/6;
+                alert(media);
+            } else {
+                alert("Números inválidos para a média");
+                main();
+            }
+        }
+        
+        function main() {
+            
+            x = Number(prompt("Informe o valor de x:"));
+            y = Number(prompt("Informe o valor de y:"));
+            z = Number(prompt("Informe o valor de z:"));
+            
+            if ((x >= 0) && (y >= 0) && (z >= 0)) {
+                option = prompt("Qual alternativa? A ou B?").toUpperCase();
+                if (option == "A") {
+                    LetraA();
+                } else {
+                    LetraB();
+                }
+            } else {
+                alert("Valores não podem ser negativos, reiniciando");
+                main();
+            }
+        }
+        
+        main();
+    </script>
+</body>
+</html>
